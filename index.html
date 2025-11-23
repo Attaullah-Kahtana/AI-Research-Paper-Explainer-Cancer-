@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-powered cancer research paper explainer for patients, caregivers, and students">
+    <title>AI Cancer Research Paper Explainer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cancer Awareness Ribbon Background Decoration -->
+    <div class="ribbon-bg"></div>
+    
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo-area">
+                <div class="logo-icon">🎗️</div>
+                <h1 class="main-title">AI Cancer Research Explainer</h1>
+            </div>
+            <p class="tagline">Making cancer research accessible to everyone</p>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2 class="hero-title">Understanding Cancer Research, Simplified</h2>
+            <p class="hero-description">
+                Upload a cancer research paper or paste text, and our AI will transform complex 
+                medical research into clear, compassionate explanations for patients, families, 
+                students, and anyone seeking to understand.
+            </p>
+            <div class="trust-indicators">
+                <span class="indicator">🤝 Patient-Friendly</span>
+                <span class="indicator">🔬 Scientifically Accurate</span>
+                <span class="indicator">💙 Compassionate AI</span>
+            </div>
+        </section>
+
+        <!-- Input Section -->
+        <section class="input-section">
+            <!-- Tab Navigation -->
+            <div class="tab-navigation">
+                <button class="tab-btn active" data-tab="pdf">
+                    📄 Upload PDF
+                </button>
+                <button class="tab-btn" data-tab="text">
+                    ✍️ Paste Text
+                </button>
+            </div>
+
+            <!-- PDF Upload Tab -->
+            <div class="tab-content active" id="pdf-tab">
+                <div class="upload-zone" id="uploadZone">
+                    <input type="file" id="pdfInput" accept=".pdf" hidden>
+                    <div class="upload-icon">📑</div>
+                    <h3 class="upload-title">Drop your PDF here</h3>
+                    <p class="upload-subtitle">or click to browse</p>
+                    <span class="file-info">Supports PDF files up to 50MB</span>
+                </div>
+                <div class="file-preview" id="filePreview" style="display: none;">
+                    <div class="file-details">
+                        <span class="file-icon">📄</span>
+                        <span class="file-name" id="fileName"></span>
+                        <button class="remove-btn" id="removeFile">✕</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text Input Tab -->
+            <div class="tab-content" id="text-tab">
+                <textarea 
+                    id="textInput" 
+                    placeholder="Paste your research paper abstract or full text here..."
+                    rows="10"
+                ></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button class="submit-btn" id="submitBtn">
+                <span class="btn-text">Explain This Research</span>
+                <span class="btn-icon">✨</span>
+            </button>
+        </section>
+
+        <!-- Loading State -->
+        <div class="loading-container" id="loadingContainer" style="display: none;">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">Our AI is reading and understanding the research...</p>
+            <div class="loading-ribbon">🎗️</div>
+        </div>
+
+        <!-- Results Section -->
+        <section class="results-section" id="resultsSection" style="display: none;">
+            <div class="results-header">
+                <h2 class="results-title">Research Summary</h2>
+                <button class="copy-btn" id="copyBtn">
+                    📋 Copy Summary
+                </button>
+            </div>
+            <div class="summary-content" id="summaryContent"></div>
+        </section>
+
+        <!-- Error Message -->
+        <div class="error-message" id="errorMessage" style="display: none;">
+            <span class="error-icon">⚠️</span>
+            <span class="error-text" id="errorText"></span>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-text">
+                💙 This tool provides research summaries only. Always consult healthcare professionals for medical advice.
+            </p>
+            <p class="footer-credits">
+                Powered by AI • Made with hope and compassion
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
